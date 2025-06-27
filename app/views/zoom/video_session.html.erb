@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Zoom Video Session</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://source.zoom.us/uitoolkit/2.2.0-2/videosdk-ui-toolkit.css" />
+  <script src="https://source.zoom.us/uitoolkit/2.2.0-2/videosdk-ui-toolkit.min.umd.js"></script>
+  <script>
+    const uitoolkit = window.UIToolkit;
+  </script>
+</head>
+<body>
+  <div class="flex flex-col w-[100vw] h-[100vh]">
+      <p class="text-2xl font-bold">Zoom Video Session</p>
+      <p class="text-sm">Session: <%= @session_name %></p>
+    <div id="sessionContainer" class="w-full h-full"></div>
+  </div>
+
+  <script>
+    const config = {
+      videoSDKJWT: '<%= @jwt_token %>',
+      sessionName: '<%= @session_name %>',
+      userName: "JavaScript",
+  sessionPasscode: "123",
+  featuresOptions: {
+    virtualBackground: {
+      enable: true,
+      virtualBackgrounds: [
+        {
+          url: "https://images.unsplash.com/photo-1715490187538-30a365fa05bd?q=80&w=1945&auto=format&fit=crop",
+        },
+      ],
+    },
+  },
+
+    };
+    const sessionContainer = document.getElementById('sessionContainer')
+    const newConfig = uitoolkit.migrateConfig(config);
+    uitoolkit.joinSession(sessionContainer, newConfig)
+  </script>
+</body>
+</html> 

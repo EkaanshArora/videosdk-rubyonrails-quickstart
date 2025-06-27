@@ -1,24 +1,55 @@
-# README
+# Zoom Video SDK Ruby on Rails Quickstart
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Ruby on Rails application that demonstrates how to integrate Zoom Video SDK with JWT authentication.
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- JWT token generation for Zoom Video SDK
+- Simple form to enter session name and role
+- Video session using UIToolkit
 
-* System dependencies
+## Setup
 
-* Configuration
+1. **Install dependencies:**
+   ```bash
+   bundle install
+   ```
 
-* Database creation
+2. **Set up environment variables:**
+   Create a `.env` file in the root directory with your Zoom SDK credentials:
+   ```
+   ZOOM_SDK_KEY=your_zoom_sdk_key_here
+   ZOOM_SDK_SECRET=your_zoom_sdk_secret_here
+   ```
 
-* Database initialization
+3. **Get Zoom SDK credentials:**
+   - Go to [Zoom Marketplace](https://marketplace.zoom.us/)
+   - Create a Video SDK app
+   - Copy the SDK Key and SDK Secret
 
-* How to run the test suite
+4. **Start the server:**
+   ```bash
+   rails server
+   ```
 
-* Services (job queues, cache servers, search engines, etc.)
+5. **Access the application:**
+   - Open http://localhost:3000
+   - Enter a session name and select your role
+   - Click "Join Session" to start the video call
 
-* Deployment instructions
+## Routes
 
-* ...
+- `GET /` - Main form page
+- `POST /zoom/generate_jwt` - Generate JWT token
+- `GET /zoom/video_session` - Video session page
+
+## Dependencies
+
+- `jwt` - For JWT token generation
+- `dotenv-rails` - For environment variable management
+
+## Notes
+
+- The JWT token is valid for 1 hour
+- Make sure to keep your SDK credentials secure
+- This is a basic implementation - add authentication and authorization as needed for production use

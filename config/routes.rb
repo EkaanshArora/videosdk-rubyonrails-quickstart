@@ -11,4 +11,9 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  # Zoom Video SDK routes
+  root "zoom#index"
+  post "zoom/generate_jwt", to: "zoom#generate_jwt"
+  get "zoom/video_session", to: "zoom#video_session"
 end
