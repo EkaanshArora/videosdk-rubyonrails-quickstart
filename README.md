@@ -1,12 +1,11 @@
 # Zoom Video SDK Ruby on Rails Quickstart
 
-A simple Ruby on Rails application that demonstrates how to integrate Zoom Video SDK with JWT authentication.
+A video conferencing app built with [Ruby on Rails](https://rubyonrails.org/) and the [Zoom Video SDK](https://developers.zoom.us/docs/video-sdk/)
 
-## Features
+## Prerequisites
 
-- JWT token generation for Zoom Video SDK
-- Simple form to enter session name and role
-- Video session using UIToolkit
+- Ruby 3.3.6+ & Rails 8.0.0+ [(docs)](https://guides.rubyonrails.org/install_ruby_on_rails.html)
+- Zoom [Video SDK Account](https://developers.zoom.us/docs/video-sdk/get-credentials/)
 
 ## Setup
 
