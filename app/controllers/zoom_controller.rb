@@ -26,7 +26,7 @@ class ZoomController < ApplicationController
     sdk_secret = ENV['ZOOM_SDK_SECRET']
 
     if sdk_key.blank? || sdk_secret.blank?
-      raise "Missing ZOOM_SDK_KEY or ZOOM_SDK_SECRET environment variables"
+      raise "Missing ZOOM_SDK_KEY or ZOOM_SDK_SECRET environment variables, please add them in .env file."
     end
 
     iat = (Time.current.to_i) - 30
